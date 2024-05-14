@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 
 import App from "next/app";
 import { useRouter } from "next/router";
@@ -12,13 +12,7 @@ import { cmsAxiosClient } from "../components/utils";
 // import { storeWrapper } from "../store";
 // import "../styles/globals.css";
 
-export const MyApp = ({
-  Component,
-  pageProps,
-  footer,
-  header,
-  showLayout,
-}) => {
+export const MyApp = ({ Component, pageProps, footer, header, showLayout }) => {
   const router = useRouter();
   const showFooter = router.asPath === "/book-a-demo" ? false : true;
   const newHomePage = router.asPath === "/" ? true : false;
