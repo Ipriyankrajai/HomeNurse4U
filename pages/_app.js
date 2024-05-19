@@ -38,20 +38,18 @@ export const MyApp = ({
 };
 
 MyApp.getInitialProps = async (context) => {
-  var footer = { data: { footerData: {} } },
-    header = { data: { header: {} } };
+  var footer = { data: { footerData: {} } };
   try {
     footer = await cmsAxiosClient.get("/footer");
-    header = await cmsAxiosClient.get("/header");
+    
   } catch (e) {
     console.log("app cms error", e);
   }
   const ctx = await App.getInitialProps(context);
-
+  
   return {
     ...ctx,
     footer: footer.data?.footerData,
-    header: header?.data?.header,
     showLayout: !context.router.query.header,
   };
 };

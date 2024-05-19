@@ -6,18 +6,7 @@ export const axiosClient = axios.create({
 });
 
 export const cmsAxiosClient = axios.create({
-  // baseURL: process.env.NEXT_PUBLIC_CMS_URL, // env
-  // baseURL: "https://hotstrapi-api.apps.openxcell.dev/api", // dev
-  baseURL: "https://cms.skilldb.com/api", // production
-  // baseURL: "http://localhost:1337/api", // local
-  headers: { "Content-Type": "application/json; charset=utf-8" },
-});
-
-export const skilldbAxiosClient = axios.create({
-  // baseURL: process.env.NEXT_PUBLIC_APP_API_URL, // env
-  baseURL: "http://localhost:5000/api", // local
-  // baseURL: "https://api.skilldb.com/api", // skilldb live
-  // baseURL: "https://skilldb-api.apps.openxcell.dev/api", // skilldb development
+  baseURL: "http://localhost:1337/api", // local
   headers: { "Content-Type": "application/json; charset=utf-8" },
 });
 

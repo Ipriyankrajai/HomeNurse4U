@@ -15,4 +15,21 @@ module.exports = {
     },
   },
   plugins: [],
+  theme: {
+    screens: {
+      esm: "0px",
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      lg1: "1110px",
+      lg2: "1200px",
+      xl: "1440px",
+      carousel: "1132px",
+    },
+    placeholderColor: {
+      primary: "#8C9196",
+      secondary: "#ffed4a",
+      danger: "#e3342f",
+    },
+  },
 }
