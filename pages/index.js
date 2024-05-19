@@ -4,6 +4,8 @@ import TextImage from "@/components/common/textImage";
 import HomePage from "../components/homePage/index";
 import VideoDescription from "@/components/homePage/VideoDescription";
 import Carousel from "@/components/homePage/Carousal";
+import ImageSlider from "@/components/homePage/ImageSlider";
+import SwipeCarousel from "@/components/homePage/SmoothScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -12,6 +14,8 @@ export default function Home() {
       <VideoDescription />
       <TextImage />
       <Carousel />
+      <ImageSlider />
+      <SwipeCarousel />
       <HomePage />
     </main>
   );
