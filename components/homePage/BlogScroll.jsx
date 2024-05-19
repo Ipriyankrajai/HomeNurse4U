@@ -91,7 +91,7 @@ const BlogScroll = ({ blog = temp, bgColor = "" }) => {
     setScroll({ ...tempScroll });
   };
   return (
-    <div className={`${bgColor} px-[20px]`}>
+    <div className={`${bgColor}`}>
       <div className="max-w-[1084px] mx-auto"></div>
       <div className="mt-[50px]">
         <div
