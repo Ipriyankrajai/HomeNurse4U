@@ -75,7 +75,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 w-full z-40">
-      <div className="bg-[#fff]  mt-[10px] max-w-[1114px] w-full mx-auto p-[15px] flex justify-between items-center rounded-[6px]">
+      <div className="bg-[#fff]  mt-[10px] max-w-[1114px] w-full mx-auto p-[15px] flex justify-between items-center rounded-[6px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.06);]">
         <div className="flex w-fit">
           <img src={menu.logo.url} alt={menu.logo.alt} />
         </div>
