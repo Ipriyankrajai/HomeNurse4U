@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Home = (props) => {
   return (
-    <main className={`justify-between m-auto ${inter.className}`}>
+    <main className={`${inter.className}`}>
       <HomePage HN4UBanner={props.HN4UBanner} home={props.home} />
       <FeaturesBanner />
       <MapBaner />

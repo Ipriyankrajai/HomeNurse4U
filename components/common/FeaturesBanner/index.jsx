@@ -90,7 +90,7 @@ const FeaturesBanner = () => {
       className="w-full "
       style={{
         backgroundImage: `url("/BgImage.png")`,
-        backgroundSize: "auto",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
