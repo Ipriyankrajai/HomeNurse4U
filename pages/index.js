@@ -1,18 +1,23 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
+import TextImage from "@/components/homePage/TextImage";
+
 import HomePage from "../components/homePage/index";
 import { cmsAxiosClient } from "@/components/utils";
 import FeaturesBanner from "@/components/common/FeaturesBanner";
 import MapBaner from "@/components/common/MapBanner";
+import VideoDescription from "@/components/homePage/VideoDescription";
+import ServiceScroll from "@/components/homePage/ServiceScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 const Home = (props) => {
   return (
     <main className={`${inter.className}`}>
       <HomePage HN4UBanner={props.HN4UBanner} home={props.home} />
+      <VideoDescription />
+      <ServiceScroll />
       <FeaturesBanner />
       <MapBaner />
-      <HomePage />
+      <TextImage />
     </main>
   );
 };

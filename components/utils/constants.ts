@@ -1,6 +1,8 @@
 // export const S3_BUCKET = "https://skilldb-repository.s3.ap-south-1.amazonaws.com/";
 
 export const S3_BUCKET = process.env.NEXT_PUBLIC_S3_URL;
+export const S3_URL = process.env.NEXT_PUBLIC_S3_URL;
+export const WebsiteURL = process.env.NEXT_PUBLIC_WebsiteURL;
 
 export const calculateExperience = (
   totalExp: string,
