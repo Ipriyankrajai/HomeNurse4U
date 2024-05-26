@@ -13,9 +13,11 @@ const Home = (props) => {
   return (
     <main className={`${inter.className}`}>
       <HomePage HN4UBanner={props.HN4UBanner} home={props.home} />
+      <VideoDescription />
+      <ServiceScroll />
       <FeaturesBanner />
       <MapBaner />
-      <HomePage />
+      <TextImage />
     </main>
   );
 };
