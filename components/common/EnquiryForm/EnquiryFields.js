@@ -16,6 +16,8 @@ const initValues = {
   company: "",
   message: "",
   interest: "",
+  state: "",
+  designation: ""
 };
 const EnquiryFields = ({
   flex = false,
@@ -47,13 +49,16 @@ const EnquiryFields = ({
       .trim("Please Remove extra spaces.")
       .required("Required"),
     // phone: Yup.string().strict().trim("Please Remove extra spaces."),
-    phone: Yup.string().matches(phoneRegExp, "Invalid"),
+    phone: Yup.string().required("Required").matches(phoneRegExp, "Invalid"),
     country: Yup.string()
       .strict()
       .trim("Please Remove extra spaces.")
       .required("Required"),
-    company: Yup.string().strict().trim("Please Remove extra spaces."),
-    message: Yup.string().strict(),
+    company: Yup.string().required("Required").strict().trim("Please Remove extra spaces."),
+    message: Yup.string().required("Required").strict(),
+    interest: Yup.string().required("Required").strict(),
+    designation: Yup.string().required("Required").strict(),
+    state: Yup.string().required("Required").strict(),
   });
 
   useEffect(() => {
@@ -159,7 +164,7 @@ const EnquiryFields = ({
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
                     >
                       <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Designation<span className="text-[#D72C0D]">*</span>
+                        Designation <span className="text-[#D72C0D]">*</span>
                       </div>
                       <input
                         type={"text"}
@@ -199,7 +204,7 @@ const EnquiryFields = ({
                   return (
                     <div className={`${styles["wrapper"]} ${fieldWrapClass}`}>
                       <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Company
+                        Company <span className="text-[#D72C0D]">*</span>
                       </div>
                       <input
                         type={"text"}
@@ -319,7 +324,7 @@ const EnquiryFields = ({
                   return (
                     <div
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
-                    >
+                    >{console.log(meta?.error)}
                       <div
                         className={`${lableBGColor} ${styles["title"]}  z-10`}
                       >
@@ -327,7 +332,7 @@ const EnquiryFields = ({
                       </div>
                       <div className="relative top-[10px]">
                         <Select
-                          className={`bg-[#fafbfb] h-[40px] px-[14px] block w-full rounded-[6px] border border-s-[#BABEC3] appearance-none focus:border-[#008060] outline-none text-[13px] leading-[150%] trackig-[0.5px] ${
+                          className={`bg-[#fafbfb] h-[40px] px-[14px] block w-full rounded-[6px] border ${meta?.error ? " border-[#D72C0D]" : " border-[#D2D5D8]"} appearance-none focus:border-[#008060] outline-none text-[13px] leading-[150%] trackig-[0.5px] ${
                             field.value ? "" : "text-[#6d7175]"
                           }`}
                           value={field.value}

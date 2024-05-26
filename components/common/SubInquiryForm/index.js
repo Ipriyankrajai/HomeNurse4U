@@ -108,7 +108,7 @@ const SubInquiryForm = ({
       >
         {(props) => (
             // grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 
-          <Form onSubmit={props.handleSubmit} className=" px-[20px] grid sm:grid-cols-2 gap-2 md:flex md:flex-wrap m-auto max-w-[1084px] mt-[30px]">
+          <Form onSubmit={props.handleSubmit} className=" px-[20px] grid sm:grid-cols-2 gap-2 md:flex md:flex-wrap m-auto max-w-[1124px] mt-[30px]">
             <div className={ " flex-auto mr-[11px] "}>
               <Field name="name">
                 {(formikProps) => {
