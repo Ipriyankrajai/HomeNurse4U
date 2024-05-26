@@ -109,3 +109,30 @@
 .active {
   background-color: #fa2020;
 }
+
+.calc-l-m {
+  margin-left: calc(calc(100% - 1084px) / 2);
+}
+
+.calc-r-p {
+  padding-right: calc(calc(100% - 1084px) / 2);
+}
+
+@media (max-width: 1084px) {
+  .calc-l-m {
+    margin-left: 20px;
+  }
+  .calc-r-p {
+    padding-right: 20px;
+  }
+}
+
+.line-heart {
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    #d9d9d9 0%,
+    #00856f 61.5%,
+    #d9d9d9 100%
+  );
+}
