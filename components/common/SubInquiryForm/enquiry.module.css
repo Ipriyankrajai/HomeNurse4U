@@ -1,0 +1,85 @@
+.wrapper input {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+
+
+.wrapper textarea {
+    margin-top: 10px;
+    width: 100%;
+    /* height: 40px; */
+    border-radius: 10px;
+    padding-top: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+
+.error-border {
+    border: 1px solid #D72C0D;
+}
+
+.n-border {
+    border: 1px solid #D2D5D8;
+}
+
+.wrapper input:focus {
+    border: 1px solid #008060;
+    outline: none;
+}
+
+.wrapper textarea:focus {
+    border: 1px solid #008060;
+    outline: none;
+}
+
+.wrapper {
+    position: relative;
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.title {
+    font-size: 10px;
+    line-height: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    top: 5px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.error-msg {
+    font-size: 10px;
+    line-height: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -5px;
+    right: 0px;
+    padding-left: 4px;
+    padding-top: 4px;
+    color: #D72C0D;
+    letter-spacing: 1px;
+}
+
+.error-msg-ta {
+    font-size: 10px;
+    line-height: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 2px;
+    right: 0px;
+    padding-left: 4px;
+    padding-top: 4px;
+    color: #D72C0D;
+    letter-spacing: 1px;
+}

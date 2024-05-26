@@ -6,14 +6,18 @@ import * as Yup from "yup";
 import { skilldbAxiosClient } from "../../utils";
 import Loader from "../../common/Loader";
 import styles from "./enquiry.module.css";
+import { Select } from "@headlessui/react";
 
 const initValues = {
   name: "",
   email: "",
   country: "",
-  // phone: "",
+  phone: "",
   company: "",
   message: "",
+  interest: "",
+  state: "",
+  designation: ""
 };
 const EnquiryFields = ({
   flex = false,
@@ -45,13 +49,16 @@ const EnquiryFields = ({
       .trim("Please Remove extra spaces.")
       .required("Required"),
     // phone: Yup.string().strict().trim("Please Remove extra spaces."),
-    // phone: Yup.string().matches(phoneRegExp, "Invalid"),
+    phone: Yup.string().required("Required").matches(phoneRegExp, "Invalid"),
     country: Yup.string()
       .strict()
       .trim("Please Remove extra spaces.")
       .required("Required"),
-    company: Yup.string().strict().trim("Please Remove extra spaces."),
-    message: Yup.string().strict(),
+    company: Yup.string().required("Required").strict().trim("Please Remove extra spaces."),
+    message: Yup.string().required("Required").strict(),
+    interest: Yup.string().required("Required").strict(),
+    designation: Yup.string().required("Required").strict(),
+    state: Yup.string().required("Required").strict(),
   });
 
   useEffect(() => {
@@ -117,11 +124,11 @@ const EnquiryFields = ({
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
                     >
                       <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Name<span className="text-[#D72C0D]">*</span>
+                        Full Name<span className="text-[#D72C0D]">*</span>
                       </div>
                       <input
                         type={"text"}
-                        placeholder="Your full name"
+                        placeholder="What should we call you?"
                         className={`${
                           meta?.touched && meta?.error
                             ? styles["error-border"]
@@ -149,7 +156,7 @@ const EnquiryFields = ({
                   );
                 }}
               </Field>
-              <Field name="email">
+              <Field name="designation">
                 {(formikProps) => {
                   const { field, meta } = formikProps;
                   return (
@@ -157,11 +164,91 @@ const EnquiryFields = ({
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
                     >
                       <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Email<span className="text-[#D72C0D]">*</span>
+                        Designation <span className="text-[#D72C0D]">*</span>
+                      </div>
+                      <input
+                        type={"text"}
+                        placeholder="What position do you hold?"
+                        className={`${
+                          meta?.touched && meta?.error
+                            ? styles["error-border"]
+                            : styles["n-border"]
+                        } ${lableBGColor}`}
+                        onChange={(e) => {
+                          let newValue = e.target.value;
+                          props.setFieldValue(field?.name, newValue);
+                        }}
+                        value={field.value}
+                      />
+                      <ErrorMessage
+                        name={field?.name}
+                        render={(msg) => {
+                          return (
+                            <div
+                              className={`${styles["error-msg"]} ${lableBGColor}`}
+                            >
+                              {msg}
+                            </div>
+                          );
+                        }}
+                      ></ErrorMessage>
+                    </div>
+                  );
+                }}
+              </Field>
+            </div>
+            <div className={flex ? `md:flex gap-[20px]` : ""}>
+              <Field name="company">
+                {(formikProps) => {
+                  const { meta, field } = formikProps;
+                  return (
+                    <div className={`${styles["wrapper"]} ${fieldWrapClass}`}>
+                      <div className={`${lableBGColor} ${styles["title"]}`}>
+                        Company <span className="text-[#D72C0D]">*</span>
+                      </div>
+                      <input
+                        type={"text"}
+                        className={`${
+                          meta?.touched && meta?.error
+                            ? styles["error-border"]
+                            : styles["n-border"]
+                        } ${lableBGColor}`}
+                        placeholder="Where do you work?"
+                        onChange={(e) => {
+                          let newValue = e.target.value;
+                          props.setFieldValue(field?.name, newValue);
+                        }}
+                        value={field.value}
+                      />
+                      <ErrorMessage
+                        name={field?.name}
+                        render={(msg) => {
+                          return (
+                            <div
+                              className={`${styles["error-msg"]} ${lableBGColor}`}
+                            >
+                              {msg}
+                            </div>
+                          );
+                        }}
+                      ></ErrorMessage>
+                    </div>
+                  );
+                }}
+              </Field>
+              <Field name="phone">
+                {(formikProps) => {
+                  const { field, meta } = formikProps;
+                  return (
+                    <div
+                      className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
+                    >
+                      <div className={`${lableBGColor} ${styles["title"]}`}>
+                        Phone<span className="text-[#D72C0D]">*</span>
                       </div>
                       <input
                         type={"email"}
-                        placeholder="Email address"
+                        placeholder="How do we get back to you?"
                         className={`${
                           meta?.touched && meta?.error
                             ? styles["error-border"]
@@ -175,6 +262,105 @@ const EnquiryFields = ({
                       />
                       <ErrorMessage
                         name={field.name}
+                        render={(msg) => {
+                          return (
+                            <div
+                              className={`${styles["error-msg"]} ${lableBGColor}`}
+                            >
+                              {msg}
+                            </div>
+                          );
+                        }}
+                      ></ErrorMessage>
+                    </div>
+                  );
+                }}
+              </Field>
+            </div>
+            <div className={flex ? `md:flex gap-[20px]` : ""}>
+              <Field name="email">
+                {(formikProps) => {
+                  const { field, meta } = formikProps;
+                  return (
+                    <div
+                      className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
+                    >
+                      <div className={`${lableBGColor} ${styles["title"]}`}>
+                        Email<span className="text-[#D72C0D]">*</span>
+                      </div>
+                      <input
+                        type={"email"}
+                        placeholder="Your official email address"
+                        className={`${
+                          meta?.touched && meta?.error
+                            ? styles["error-border"]
+                            : styles["n-border"]
+                        } ${lableBGColor}`}
+                        onChange={(e) => {
+                          let newValue = e.target.value;
+                          props.setFieldValue(field?.name, newValue);
+                        }}
+                        value={field.value}
+                      />
+                      <ErrorMessage
+                        name={field.name}
+                        render={(msg) => {
+                          return (
+                            <div
+                              className={`${styles["error-msg"]} ${lableBGColor}`}
+                            >
+                              {msg}
+                            </div>
+                          );
+                        }}
+                      ></ErrorMessage>
+                    </div>
+                  );
+                }}
+              </Field>
+              <Field name="interest">
+                {(formikProps) => {
+                  const { meta, field, form } = formikProps;
+                  return (
+                    <div
+                      className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
+                    >{console.log(meta?.error)}
+                      <div
+                        className={`${lableBGColor} ${styles["title"]}  z-10`}
+                      >
+                        Interested In<span className="text-[#D72C0D]">*</span>
+                      </div>
+                      <div className="relative top-[10px]">
+                        <Select
+                          className={`bg-[#fafbfb] h-[40px] px-[14px] block w-full rounded-[6px] border ${meta?.error ? " border-[#D72C0D]" : " border-[#D2D5D8]"} appearance-none focus:border-[#008060] outline-none text-[13px] leading-[150%] trackig-[0.5px] ${
+                            field.value ? "" : "text-[#6d7175]"
+                          }`}
+                          value={field.value}
+                          onChange={(e) =>
+                            form.setFieldValue("interest", e.target.value)
+                          }
+                        >
+                          <option
+                            disabled
+                            selected
+                            value={""}
+                            className="text-[13px] leading-[150%] trackig-[0.5px]"
+                            hidden
+                          >
+                            Please choose an option
+                          </option>
+                          <option value="Mobile Nursing">Mobile Nursing</option>
+                          <option value="Phlebotomy">Phlebotomy</option>
+                          <option value="Clinical Site Support">
+                            Clinical Site Support
+                          </option>
+                          <option value="Clinical Supplies">
+                            Clinical Supplies
+                          </option>
+                        </Select>
+                      </div>
+                      <ErrorMessage
+                        name={field?.name}
                         render={(msg) => {
                           return (
                             <div
@@ -208,7 +394,7 @@ const EnquiryFields = ({
                             ? styles["error-border"]
                             : styles["n-border"]
                         } ${lableBGColor}`}
-                        placeholder="Where do you stay?"
+                        placeholder="Which country do you live in?"
                         onChange={(e) => {
                           let newValue = e.target.value;
                           props.setFieldValue(field?.name, newValue);
@@ -231,19 +417,19 @@ const EnquiryFields = ({
                   );
                 }}
               </Field>
-              {/* <Field name="phone">
+              <Field name="state">
                 {(formikProps) => {
-                  const { meta, field } = formikProps;
+                  const { field, meta } = formikProps;
                   return (
                     <div
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
                     >
                       <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Phone
+                        State<span className="text-[#D72C0D]">*</span>
                       </div>
                       <input
-                        type={"tel"}
-                        placeholder="How do we get back to you?"
+                        type={"state"}
+                        placeholder="Which state do you stay?"
                         className={`${
                           meta?.touched && meta?.error
                             ? styles["error-border"]
@@ -256,45 +442,7 @@ const EnquiryFields = ({
                         value={field.value}
                       />
                       <ErrorMessage
-                        name={field?.name}
-                        render={(msg) => {
-                          return (
-                            <div
-                              className={`${styles["error-msg"]} ${lableBGColor}`}
-                            >
-                              {msg}
-                            </div>
-                          );
-                        }}
-                      ></ErrorMessage>
-                    </div>
-                  );
-                }}
-              </Field> */}
-              <Field name="company">
-                {(formikProps) => {
-                  const { meta, field } = formikProps;
-                  return (
-                    <div className={`${styles["wrapper"]} ${fieldWrapClass}`}>
-                      <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Company
-                      </div>
-                      <input
-                        type={"text"}
-                        className={`${
-                          meta?.touched && meta?.error
-                            ? styles["error-border"]
-                            : styles["n-border"]
-                        } ${lableBGColor}`}
-                        placeholder="Where do you work?"
-                        onChange={(e) => {
-                          let newValue = e.target.value;
-                          props.setFieldValue(field?.name, newValue);
-                        }}
-                        value={field.value}
-                      />
-                      <ErrorMessage
-                        name={field?.name}
+                        name={field.name}
                         render={(msg) => {
                           return (
                             <div
@@ -310,44 +458,7 @@ const EnquiryFields = ({
                 }}
               </Field>
             </div>
-            {/* <Field name="company">
-              {(formikProps: any) => {
-                const { meta, field } = formikProps;
-                return (
-                  <div className={`${styles["wrapper"]} ${fieldWrapClass}`}>
-                    <div className={`${lableBGColor} ${styles["title"]}`}>
-                      Company<span className="text-[#D72C0D]">*</span>
-                    </div>
-                    <input
-                      type={"text"}
-                      className={`${
-                        meta?.touched && meta?.error
-                          ? styles["error-border"]
-                          : styles["n-border"]
-                      } ${lableBGColor}`}
-                      placeholder="Where do you work?"
-                      onChange={(e) => {
-                        let newValue = e.target.value;
-                        props.setFieldValue(field?.name, newValue);
-                      }}
-                      value={field.value}
-                    />
-                    <ErrorMessage
-                      name={field?.name}
-                      render={(msg) => {
-                        return (
-                          <div
-                            className={`${styles["error-msg"]} ${lableBGColor}`}
-                          >
-                            {msg}
-                          </div>
-                        );
-                      }}
-                    ></ErrorMessage>
-                  </div>
-                );
-              }}
-            </Field> */}
+
             <Field name="message">
               {(formikProps) => {
                 const { meta, field } = formikProps;
@@ -392,9 +503,7 @@ const EnquiryFields = ({
               }}
             </Field>
             <button
-              className={`uppercase bg-[#008060] text-white text-[13px] sf-med font-medium rounded-[10px] py-[10px] h-[50px] ${
-                buttonFitContent ? "w-max px-[20px]" : "w-full"
-              }`}
+              className={`uppercase bg-[#008060] text-white text-[13px] sf-med font-medium rounded-[10px] py-[10px] h-[50px] w-full`}
               disabled={loading}
               type={loading ? "button" : "submit"}
             >
@@ -402,10 +511,8 @@ const EnquiryFields = ({
                 <div className="flex justify-center">
                   <Loader />
                 </div>
-              ) : userID && orgID ? (
-                "Request interview"
               ) : (
-                "REQUEST TALENT FOR FREE"
+                "SEND MESSAGE"
               )}
             </button>
             {status ? (
