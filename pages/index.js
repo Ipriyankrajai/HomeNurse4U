@@ -1,11 +1,9 @@
 import { Inter } from "next/font/google";
-import TextImage from "@/components/common/textImage";
+import TextImage from "@/components/homePage/TextImage";
 
 import HomePage from "../components/homePage/index";
 import VideoDescription from "@/components/homePage/VideoDescription";
-import Carousel from "@/components/homePage/Carousal";
-import ImageSlider from "@/components/homePage/ImageSlider";
-import SwipeCarousel from "@/components/homePage/SmoothScroll";
+import ServiceScroll from "@/components/homePage/ServiceScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -13,9 +11,7 @@ export default function Home() {
     <main className={`justify-between m-auto ${inter.className}`}>
       <VideoDescription />
       <TextImage />
-      <Carousel />
-      <ImageSlider />
-      <SwipeCarousel />
+      <ServiceScroll />
       <HomePage />
     </main>
   );
