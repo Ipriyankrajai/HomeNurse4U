@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export const axiosClient = axios.create({
   baseURL: "https://reqres.in/api",
   headers: { "Content-Type": "application/json; charset=utf-8" },
