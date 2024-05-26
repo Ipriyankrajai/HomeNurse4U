@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { skilldbAxiosClient } from "../../utils";
 import Loader from "../../common/Loader";
 import styles from "./enquiry.module.css";
+import { Select } from "@headlessui/react";
 
 const initValues = {
   name: "",
@@ -14,6 +15,7 @@ const initValues = {
   phone: "",
   company: "",
   message: "",
+  interest: "",
 };
 const EnquiryFields = ({
   flex = false,
@@ -157,7 +159,7 @@ const EnquiryFields = ({
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
                     >
                       <div className={`${lableBGColor} ${styles["title"]}`}>
-                       Designation<span className="text-[#D72C0D]">*</span>
+                        Designation<span className="text-[#D72C0D]">*</span>
                       </div>
                       <input
                         type={"text"}
@@ -191,7 +193,7 @@ const EnquiryFields = ({
               </Field>
             </div>
             <div className={flex ? `md:flex gap-[20px]` : ""}>
-            <Field name="company">
+              <Field name="company">
                 {(formikProps) => {
                   const { meta, field } = formikProps;
                   return (
@@ -269,8 +271,8 @@ const EnquiryFields = ({
                   );
                 }}
               </Field>
-              </div>
-              <div className={flex ? `md:flex gap-[20px]` : ""}>
+            </div>
+            <div className={flex ? `md:flex gap-[20px]` : ""}>
               <Field name="email">
                 {(formikProps) => {
                   const { field, meta } = formikProps;
@@ -311,30 +313,47 @@ const EnquiryFields = ({
                   );
                 }}
               </Field>
-              <Field name="country">
+              <Field name="interest">
                 {(formikProps) => {
-                  const { meta, field } = formikProps;
+                  const { meta, field, form } = formikProps;
                   return (
                     <div
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
                     >
-                      <div className={`${lableBGColor} ${styles["title"]}`}>
-                        Country<span className="text-[#D72C0D]">*</span>
+                      <div
+                        className={`${lableBGColor} ${styles["title"]}  z-10`}
+                      >
+                        Interested In<span className="text-[#D72C0D]">*</span>
                       </div>
-                      <input
-                        type={"select"}
-                        className={`${
-                          meta?.touched && meta?.error
-                            ? styles["error-border"]
-                            : styles["n-border"]
-                        } ${lableBGColor}`}
-                        placeholder="Where do you stay?"
-                        onChange={(e) => {
-                          let newValue = e.target.value;
-                          props.setFieldValue(field?.name, newValue);
-                        }}
-                        value={field.value}
-                      />
+                      <div className="relative top-[10px]">
+                        <Select
+                          className={`bg-[#fafbfb] h-[40px] px-[14px] block w-full rounded-[6px] border border-s-[#BABEC3] appearance-none focus:border-[#008060] outline-none text-[13px] leading-[150%] trackig-[0.5px] ${
+                            field.value ? "" : "text-[#6d7175]"
+                          }`}
+                          value={field.value}
+                          onChange={(e) =>
+                            form.setFieldValue("interest", e.target.value)
+                          }
+                        >
+                          <option
+                            disabled
+                            selected
+                            value={""}
+                            className="text-[13px] leading-[150%] trackig-[0.5px]"
+                            hidden
+                          >
+                            Please choose an option
+                          </option>
+                          <option value="Mobile Nursing">Mobile Nursing</option>
+                          <option value="Phlebotomy">Phlebotomy</option>
+                          <option value="Clinical Site Support">
+                            Clinical Site Support
+                          </option>
+                          <option value="Clinical Supplies">
+                            Clinical Supplies
+                          </option>
+                        </Select>
+                      </div>
                       <ErrorMessage
                         name={field?.name}
                         render={(msg) => {
@@ -352,7 +371,7 @@ const EnquiryFields = ({
                 }}
               </Field>
             </div>
-              <div className={flex ? `md:flex gap-[20px]` : ""}>
+            <div className={flex ? `md:flex gap-[20px]` : ""}>
               <Field name="country">
                 {(formikProps) => {
                   const { meta, field } = formikProps;
@@ -434,7 +453,7 @@ const EnquiryFields = ({
                 }}
               </Field>
             </div>
-            
+
             <Field name="message">
               {(formikProps) => {
                 const { meta, field } = formikProps;
