@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const Banner = (props) => {
-  console.log(props.home);
+  // console.log(props.home);
   const banner = props?.home?.banner || {};
   const videRef = useRef();
 
