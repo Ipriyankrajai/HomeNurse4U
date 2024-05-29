@@ -92,6 +92,7 @@ const FeaturesBanner = () => {
         backgroundImage: `url("/BgImage.png")`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        marginTop: "50px",
       }}
     >
       <div className="w-full bg-white opacity-[0.9] px-[20px] py-[70px]">
