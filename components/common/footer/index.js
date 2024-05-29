@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const Footer = (props) => {
   // const { footer } = props;
+  
   const footer = {
     "id": 1,
     "createdAt": "2024-05-14T15:11:08.486Z",
