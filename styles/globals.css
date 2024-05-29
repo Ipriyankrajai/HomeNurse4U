@@ -16,44 +16,96 @@
   }
 }
 
+/* Domaine-Display */
+@font-face {
+  font-display: swap;
+  font-family: "Domaine-Display-Medium";
+  src: url("../asset/fonts/domaine-disp-medium.otf");
+}
+
+/* Mark-Simonson-Proxima-Nova */
+@font-face {
+  font-display: swap;
+  font-family: "Mark-Simonson-Proxima-Nova-Regular";
+  src: url("../asset/fonts/Mark-Simonson-Proxima-Nova-Regular.otf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Mark-Simonson-Proxima-Nova-Semibold";
+  src: url("../asset/fonts/Mark-Simonson-Proxima-Nova-Semibold.otf");
+}
+
+.h1 {
+  font-family: "Domaine-Display-Medium";
+  font-size: 64px;
+  line-height: 108%;
+  letter-spacing: 0px;
+}
+
 .h2 {
+  font-family: "Domaine-Display-Medium";
   font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%; /* 57.6px */
+  line-height: 110%;
+  letter-spacing: -2px;
 }
+
+.h3 {
+  font-family: "Domaine-Display-Medium";
+  font-size: 36px;
+  line-height: 110%;
+  letter-spacing: -1px;
+}
+
 .h4 {
+  font-family: "Domaine-Display-Medium";
   font-size: 28px;
-  font-weight: 500;
   line-height: 120%;
+  letter-spacing: -0.8px;
 }
+
+.h5 {
+  font-family: "Domaine-Display-Medium";
+  font-size: 22px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+
 .tb {
+  font-family: "Mark-Simonson-Proxima-Nova-Semibold";
   font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
   line-height: 150%; /* 21px */
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
 .ts {
+  font-family: "Mark-Simonson-Proxima-Nova-Semibold";
   font-size: 12px;
-  font-style: normal;
-  font-weight: 600;
   line-height: 150%; /* 18px */
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .bt {
+  font-family: "Mark-Simonson-Proxima-Nova-Regular";
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 150%; /* 27px */
+  letter-spacing: 0px;
 }
 
 .bs {
+  font-family: "Mark-Simonson-Proxima-Nova-Regular";
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.bq {
+  font-family: "Domaine-Display-Medium";
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
 }
 
 .carousel-images {
