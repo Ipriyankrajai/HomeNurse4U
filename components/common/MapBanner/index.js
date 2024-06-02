@@ -29,7 +29,7 @@ const MapBaner = () => {
         <label className="block text-[14px] leading-[21px] tracking-[2px] uppercase text-center text-[#026B82] font-semibold">
           our coverage
         </label>
-        <h3 className="text-[48px] leading-[120%] font-medium text-center mt-[20px] max-w-[900px] mx-auto">
+        <h3 className="font-['Domaine_Display'] text-[48px] leading-[120%] font-medium text-center mt-[20px] max-w-[900px] mx-auto">
           Your global partner for mobile nursing and decentralised clinical
           trials
         </h3>
