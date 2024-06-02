@@ -99,7 +99,7 @@ const FeaturesBanner = () => {
           <label className="block text-[14px] leading-[21px] tracking-[2px] uppercase text-center text-[#00856F] font-semibold">
             unique features of homenurse4u
           </label>
-          <h3 className="text-[48px] leading-[120%] font-medium text-center mt-[20px] max-w-[900px] mx-auto">
+          <h3 className="font-['Domaine_Display'] text-[48px] leading-[120%] font-medium text-center mt-[20px] max-w-[900px] mx-auto">
             Our visiting nurses for clinical trials{" "}
             <span className="text-[#00856F]">reduce</span> patients’ burden,{" "}
             <span className="text-[#00856F]">maximising</span> the clinical
@@ -117,7 +117,7 @@ const FeaturesBanner = () => {
                   className="flex flex-col items-center max-w-[335px]"
                 >
                   <div className="flex w-fit">{item?.icon}</div>
-                  <h3 className="mt-[10px] text-[28px] leading-[120%] font-medium text-center">
+                  <h3 className="mt-[10px] text-[28px] leading-[120%] font-medium text-center font-['Domaine_Display']">
                     {item?.title}
                   </h3>
                   <p className="mt-[7px] text-[18px] leading-[150%] text-center">
