@@ -6,7 +6,7 @@ export const axiosClient = axios.create({
 
 export const cmsAxiosClient = axios.create({
   // baseURL: "http://localhost:1337/api", // local
-  baseURL: "http://ec2-54-165-223-232.compute-1.amazonaws.com/:1337/api", // local
+  baseURL: "http://ec2-54-165-223-232.compute-1.amazonaws.com:1337/api", // local
   headers: { "Content-Type": "application/json; charset=utf-8" },
 });
 
