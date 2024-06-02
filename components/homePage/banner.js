@@ -24,8 +24,10 @@ const Banner = (props) => {
         type={"video/mp4"}
         style={{
           borderRadius: "20px",
-          width: "100%",
+          // width: "100%",
+          maxWidth: "1284px",
           height: "auto",
+          margin: "auto"
         }}
         ref={videRef}
       ></video>
