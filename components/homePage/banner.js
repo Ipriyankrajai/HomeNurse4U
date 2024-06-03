@@ -33,7 +33,10 @@ const Banner = (props) => {
           borderTopLeftRadius: "0px",
           borderTopRightRadius: "0px",
           width: "100%",
+          // width: "100%",
+          maxWidth: "1284px",
           height: "auto",
+          margin: "auto",
         }}
         // ref={videRef}
       />
