@@ -107,9 +107,12 @@ const SubInquiryForm = ({
         enableReinitialize
       >
         {(props) => (
-            // grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 
-          <Form onSubmit={props.handleSubmit} className=" px-[20px] grid sm:grid-cols-2 gap-2 md:flex md:flex-wrap m-auto max-w-[1124px] mt-[30px]">
-            <div className={ " flex-auto mr-[11px] "}>
+          // grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3
+          <Form
+            onSubmit={props.handleSubmit}
+            className=" px-[20px] grid sm:grid-cols-2 gap-2 md:flex md:flex-wrap m-auto max-w-[1124px] mt-[30px]"
+          >
+            <div className={" flex-auto mr-[11px] "}>
               <Field name="name">
                 {(formikProps) => {
                   const { field, meta } = formikProps;
@@ -192,8 +195,8 @@ const SubInquiryForm = ({
                   );
                 }}
               </Field>
-              </div>
-              <div className={ " flex-auto mr-[11px] "}>
+            </div>
+            <div className={" flex-auto mr-[11px] "}>
               <Field name="message">
                 {(formikProps) => {
                   const { field, meta } = formikProps;
@@ -236,21 +239,21 @@ const SubInquiryForm = ({
               </Field>
             </div>
             <div>
-            <div className="flex-auto ">
-            <button
-              className={`mt-[10px] uppercase bg-[#00856F] text-white rounded-[6px] h-[40px] px-[20px] font-medium tracking-[0.14px] text-[14px] `}
-              disabled={loading}
-              type={loading ? "button" : "submit"}
-            >
-              {loading ? (
-                <div className="flex justify-center">
-                  <Loader />
-                </div>
-              ) : (
-                "Submit rfi/rfp"
-              )}
-            </button>
-            </div>
+              <div className="flex-auto ">
+                <button
+                  className={`mt-[10px] uppercase bg-[#00856F] text-white rounded-[6px] h-[40px] px-[20px] font-medium tracking-[0.14px] text-[14px] `}
+                  disabled={loading}
+                  type={loading ? "button" : "submit"}
+                >
+                  {loading ? (
+                    <div className="flex justify-center">
+                      <Loader />
+                    </div>
+                  ) : (
+                    "Submit rfi/rfp"
+                  )}
+                </button>
+              </div>
             </div>
             {status ? (
               status == "success" ? (

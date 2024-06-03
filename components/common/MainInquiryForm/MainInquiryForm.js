@@ -9,11 +9,16 @@ const MainInquiryForm = (props) => {
         <div className="block lg:flex lg:flex-wrap lg:gap-[60px] justify-between">
           <div className="flex-1 relative lg:flex">
             <div className="mt-[70px]">
-             <p className="text-[#00856F] text-[14px] leading-[150%] tracking-[2px] font-semibold uppercase">{hn4uBanner?.label}</p>
-             <h2 className="mt-[20px] text-[48px] leading-[120%] font-medium font-['Domaine_Display']">{hn4uBanner?.title}</h2>
-             <p className="mt-[15px] text-[18px] leading-[150%] text-[#64726F] font-normal">{hn4uBanner?.description}</p>
+              <p className="text-[#00856F] text-[14px] leading-[150%] tracking-[2px] font-semibold uppercase">
+                {hn4uBanner?.label}
+              </p>
+              <h2 className="mt-[20px] text-[48px] leading-[120%] font-medium font-['Domaine_Display']">
+                {hn4uBanner?.title}
+              </h2>
+              <p className="mt-[15px] text-[18px] leading-[150%] text-[#64726F] font-normal">
+                {hn4uBanner?.description}
+              </p>
             </div>
-            
           </div>
           <div className="flex-1 pt-[50px] w-[100%] lg:w-[70%] basis-[232px]">
             <p className="pb-[10px] w-max text-[#6D7175] text-[12px] tracking-[2px] uppercase sf-semibold">

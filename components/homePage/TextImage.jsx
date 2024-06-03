@@ -5,7 +5,7 @@ import BlogScroll from "@/components/homePage/BlogScroll";
 
 function TextImage() {
   return (
-    <div>
+    <div className="mt-[30px] pb-[70px]">
       <div className="max-w-[1124px] px-[20px] mx-auto">
         <div className="flex gap-[40px] items-end">
           <div className="max-w-[500px]">

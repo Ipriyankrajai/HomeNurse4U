@@ -4,16 +4,22 @@ import { useEffect, useRef } from "react";
 const Banner = (props) => {
   // console.log(props.home);
   const banner = props?.home?.banner || {};
-  const videRef = useRef();
+  // const videRef = useRef();
 
-  useEffect(() => {
-    videRef.current.play();
-  });
+  // useEffect(() => {
+  //   videRef.current.play();
+  // });
 
   return (
     <div
       className="m-auto"
-      style={{ borderRadius: "20px", overflow: "hidden" }}
+      style={{
+        borderRadius: "20px",
+        borderTopLeftRadius: "0px",
+        borderTopRightRadius: "0px",
+        padding: "0px 20px",
+        overflow: "hidden",
+      }}
     >
       <video
         loop
@@ -24,13 +30,16 @@ const Banner = (props) => {
         type={"video/mp4"}
         style={{
           borderRadius: "20px",
+          borderTopLeftRadius: "0px",
+          borderTopRightRadius: "0px",
+          width: "100%",
           // width: "100%",
           maxWidth: "1284px",
           height: "auto",
-          margin: "auto"
+          margin: "auto",
         }}
-        ref={videRef}
-      ></video>
+        // ref={videRef}
+      />
 
       <div className="max-w-[1084px] m-auto bg-[#ffffff]">
         <div
