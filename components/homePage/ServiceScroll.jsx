@@ -56,7 +56,7 @@ const ServiceScroll = ({ blog = imgs, bgColor = "" }) => {
     setScroll({ ...tempScroll });
   };
   return (
-    <div className={`${bgColor} mt-[50px]`}>
+    <div className={`${bgColor} mt-[100px]`}>
       <div className="max-w-[1124px] mx-auto px-[20px]">
         <h2 className="h2 mb-[30px]">
           Weaving a tapestry of health: Your journey, our dedicated support

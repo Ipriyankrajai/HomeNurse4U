@@ -324,7 +324,7 @@ const EnquiryFields = ({
                   return (
                     <div
                       className={`w-full ${styles["wrapper"]} ${fieldWrapClass}`}
-                    >{console.log(meta?.error)}
+                    >
                       <div
                         className={`${lableBGColor} ${styles["title"]}  z-10`}
                       >

@@ -29,7 +29,7 @@ const MapBaner = () => {
         <label className="block text-[14px] leading-[21px] tracking-[2px] uppercase text-center text-[#026B82] font-semibold">
           our coverage
         </label>
-        <h3 className="text-[48px] leading-[120%] font-medium text-center mt-[20px] max-w-[900px] mx-auto">
+        <h3 className="font-['Domaine_Display'] text-[48px] leading-[120%] font-medium text-center mt-[20px] max-w-[900px] mx-auto">
           Your global partner for mobile nursing and decentralised clinical
           trials
         </h3>
@@ -41,7 +41,7 @@ const MapBaner = () => {
         <div className="max-w-[800px] mx-auto flex flex-wrap gap-[20px] items-center mt-[30px]">
           {[
             { name: "our offices", color: "#CEC830" },
-            { name: "Service coverage", color: "#000856f" },
+            { name: "Service coverage", color: "#00856F" },
             { name: "predicted growth in next few years", color: "#BCE5EE" },
           ].map((item) => {
             return (
@@ -53,7 +53,7 @@ const MapBaner = () => {
                   viewBox="0 0 21 21"
                   fill="none"
                 >
-                  <circle cx="10.5" cy="10.5" r="10" fill="#CEC830" />
+                  <circle cx="10.5" cy="10.5" r="10" fill={item?.color} />
                 </svg>
                 <div className="text-[14px] leading-[21px] tracking-[2px] uppercase font-semibold">
                   {item.name}

@@ -7,17 +7,23 @@ import FeaturesBanner from "@/components/common/FeaturesBanner";
 import MapBaner from "@/components/common/MapBanner";
 import VideoDescription from "@/components/homePage/VideoDescription";
 import ServiceScroll from "@/components/homePage/ServiceScroll";
+import Banner from "@/components/homePage/banner";
+import SubInquiryForm from "@/components/common/SubInquiryForm";
+import MainInquiryForm from "@/components/common/MainInquiryForm/MainInquiryForm";
 const inter = Inter({ subsets: ["latin"] });
 
 const Home = (props) => {
+ 
   return (
     <main className={`${inter.className}`}>
-      <HomePage HN4UBanner={props.HN4UBanner} home={props.home} />
+      <Banner home={props.home} />
+      <SubInquiryForm />
       <VideoDescription />
       <ServiceScroll />
       <FeaturesBanner />
       <MapBaner />
       <TextImage />
+      <MainInquiryForm hn4uBanner={props.HN4UBanner} />
     </main>
   );
 };

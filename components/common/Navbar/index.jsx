@@ -134,7 +134,7 @@ const Navbar = () => {
           {menu.cta?.map((item, index) => (
             <div
               key={index}
-              className="px-[20px] py-[12px] rounded-[6px] bg-[#00856F] text-white flex gap-[5px] items-center cursor-pointer"
+              className="px-[20px] py-[12px] rounded-[6px] bg-[#00856F] hover:bg-[#006C50] active:bg-[#005C44] transition-colors duration-100 text-white flex gap-[5px] items-center cursor-pointer"
             >
               <div className="flex w-fit">{item.icon}</div>
               <div className="text-[15px] leading-[0.15px] font-semibold uppercase">
