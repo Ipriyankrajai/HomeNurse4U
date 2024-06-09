@@ -58,7 +58,7 @@ const ServiceScroll = ({ blog = imgs, bgColor = "" }) => {
   return (
     <div className={`${bgColor} mt-[100px]`}>
       <div className="max-w-[1124px] mx-auto px-[20px]">
-        <h2 className="h2 mb-[30px]">
+        <h2 className="h2 mb-[30px] text-center">
           Weaving a tapestry of health: Your journey, our dedicated support
         </h2>
       </div>

@@ -33,7 +33,7 @@ const MapBaner = () => {
           Your global partner for mobile nursing and decentralised clinical
           trials
         </h3>
-        <p className="mt-[15px] text-[18px] leading-[150%] max-w-[650px] mx-auto">
+        <p className="bt mt-[15px] text-[18px] leading-[150%] max-w-[650px] mx-auto text-center">
           We help our clients to achieve their objectives in the most efficient
           way increasing patient recruitment by at least 60% and maintain
           patient retention above 95%.
