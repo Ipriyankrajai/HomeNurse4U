@@ -13,11 +13,10 @@ import MainInquiryForm from "@/components/common/MainInquiryForm/MainInquiryForm
 const inter = Inter({ subsets: ["latin"] });
 
 const Home = (props) => {
- 
   return (
     <main className={`${inter.className}`}>
       <Banner home={props.home} />
-      <SubInquiryForm />
+      {/* <SubInquiryForm /> */}
       <VideoDescription />
       <ServiceScroll />
       <FeaturesBanner />

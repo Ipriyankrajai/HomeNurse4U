@@ -21,25 +21,52 @@ const Banner = (props) => {
         overflow: "hidden",
       }}
     >
-      <video
-        loop
-        muted
-        autoPlay
-        src="https://hn4u-development.s3.us-east-1.amazonaws.com/7088510_uhd_3840_2160_25fps_7f9f4e3696.mp4"
-        preload={"auto"}
-        type={"video/mp4"}
+      <div
         style={{
+          position: "relative",
           borderRadius: "20px",
           borderTopLeftRadius: "0px",
           borderTopRightRadius: "0px",
           width: "100%",
           // width: "100%",
-          maxWidth: "1284px",
+          maxWidth: "1400px",
           height: "auto",
           margin: "auto",
         }}
-        // ref={videRef}
-      />
+      >
+        <video
+          loop
+          muted
+          autoPlay
+          src="https://hn4u-development.s3.us-east-1.amazonaws.com/7088510_uhd_3840_2160_25fps_7f9f4e3696.mp4"
+          preload={"auto"}
+          type={"video/mp4"}
+          style={{
+            borderRadius: "20px",
+            borderTopLeftRadius: "0px",
+            borderTopRightRadius: "0px",
+            width: "100%",
+            // width: "100%",
+            maxWidth: "1400px",
+            height: "auto",
+            margin: "auto",
+          }}
+          // ref={videRef}
+        />
+        <div
+          style={{
+            position: "absolute",
+            borderRadius: "20px",
+            borderTopLeftRadius: "0px",
+            borderTopRightRadius: "0px",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+          }}
+        ></div>
+      </div>
 
       <div className="max-w-[1084px] m-auto bg-[#ffffff]">
         <div

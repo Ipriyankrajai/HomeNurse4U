@@ -106,7 +106,7 @@ const FeaturesBanner = () => {
             <span className="text-[#00856F]">maximising</span> the clinical
             trial outcome
           </h3>
-          <p className="mt-[15px] text-[18px] leading-[150%] max-w-[650px] mx-auto">
+          <p className="bt mt-[15px] text-[18px] leading-[150%] max-w-[650px] mx-auto text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -121,7 +121,7 @@ const FeaturesBanner = () => {
                   <h3 className="mt-[10px] text-[28px] leading-[120%] font-medium text-center font-['Domaine_Display']">
                     {item?.title}
                   </h3>
-                  <p className="mt-[7px] text-[18px] leading-[150%] text-center">
+                  <p className="bt mt-[7px] text-[18px] leading-[150%] text-center">
                     {item?.description}
                   </p>
                 </div>
