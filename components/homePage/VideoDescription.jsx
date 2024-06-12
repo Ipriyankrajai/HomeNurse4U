@@ -15,7 +15,15 @@ function VideoDescription() {
   }, [play]);
 
   return (
-    <div className="flex flex-wrap gap-x-[30px] gap-y-[15px] h-full mt-[80px]">
+    <div
+      className="flex flex-wrap gap-x-[30px] gap-y-[15px] h-full mt-[80px]"
+      style={{
+        backgroundImage: `url("/VideoDescriptionBackgroundImage.png")`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        marginTop: "50px",
+      }}
+    >
       <div className="max-w-[330px] calc-l-m">
         <div className="tb text-[#00856F]">
           VISITING NURSE FOR CLINICAL TRIALS

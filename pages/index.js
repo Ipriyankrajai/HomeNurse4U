@@ -10,6 +10,7 @@ import ServiceScroll from "@/components/homePage/ServiceScroll";
 import Banner from "@/components/homePage/banner";
 import SubInquiryForm from "@/components/common/SubInquiryForm";
 import MainInquiryForm from "@/components/common/MainInquiryForm/MainInquiryForm";
+import MyCarousel from "../components/homePage/MyCarousel";
 const inter = Inter({ subsets: ["latin"] });
 
 const Home = (props) => {
@@ -19,6 +20,7 @@ const Home = (props) => {
       {/* <SubInquiryForm /> */}
       <VideoDescription />
       <ServiceScroll />
+      {/* <MyCarousel /> */}
       <FeaturesBanner />
       <MapBaner />
       <TextImage />

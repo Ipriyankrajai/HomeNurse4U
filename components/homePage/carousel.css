@@ -1,0 +1,34 @@
+/* styles/carousel.css */
+
+.home-slide-image {
+  width: 100%;
+  height: auto;
+}
+
+.home-slide-info-title {
+  font-size: 24px;
+  color: white;
+}
+
+.home-slide-info-par {
+  font-size: 16px;
+  color: white;
+}
+
+.home-slide-num {
+  font-size: 14px;
+  color: white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00856f; /* Match your arrow color */
+}
+
+.swiper-pagination-bullet {
+  background-color: #dee3e3;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00856f;
+}

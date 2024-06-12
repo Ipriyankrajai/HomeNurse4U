@@ -66,7 +66,7 @@ const Banner = (props) => {
             backgroundColor: "rgba(0, 0, 0, 0.5)",
           }}
         ></div>
-        <div className="max-w-[1084px] m-auto absolute bottom-[50px] left-[30px]">
+        <div className="max-w-[700px] m-auto absolute bottom-[50px] left-[158px]">
           <div
             style={{
               height:
